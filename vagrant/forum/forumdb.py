@@ -10,10 +10,8 @@ def get_posts():
   db = psycopg2.connect(database = DBNAME)
   cursor = db.cursor()
   cursor.execute('select content, time from posts order by time desc;')
-  posts = cursor.fetchall()
+  return cursor.fetchall()
   db.close()
-  return posts
-
 
 def add_post(content):
   """Add a post to the 'database' with the current timestamp."""
