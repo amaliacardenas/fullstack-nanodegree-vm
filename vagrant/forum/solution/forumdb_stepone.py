@@ -1,5 +1,5 @@
 # Database code for the DB Forum.
-# 
+#
 # This is NOT the full solution!
 
 import psycopg2
@@ -22,4 +22,3 @@ def add_post(content):
   c.execute("insert into posts values ('%s')" % content) # Almost but not quite.
   db.commit()
   db.close()
-
